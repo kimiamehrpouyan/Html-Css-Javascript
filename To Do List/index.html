@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>To Do</title>
+  </head>
+  <body class="body">
+    <nav class="navbar">
+      <div class="navbar__logo">
+        <i class="navbar__logo-icon fas fa-paint-brush"></i>
+        <h1 class="navbar__logo-title">ToDoList</h1>
+      </div>
+      <div class="navbar__darkmode">
+        <button class="navbar__darkmode-btn">
+          <i class="fas fa-moon navbar__darkmode-btn-icon"></i>
+          <i class="fas fa-sun navbar__lightmode-btn-icon hidden"></i>
+        </button>
+      </div>
+    </nav>
+    <main class="layout">
+      <aside class="layout__sidebar">
+        <ul class="sidebar__menu">
+          <li class="sidebar__item sidebar__all-tasks">
+            <i class="sidebar__icon fas fa-border-all"></i>
+            <span class="sidebar__text">All Tasks</span>
+          </li>
+          <li class="sidebar__item sidebar__in-progress">
+            <i class="sidebar__icon fas fa-hourglass-half"></i>
+            <span class="sidebar__text">In Progress</span>
+          </li>
+          <li class="sidebar__item sidebar__completed">
+            <i class="sidebar__icon fas fa-check-circle"></i>
+            <span class="sidebar__text">Completed</span>
+          </li>
+        </ul>
+        <div class="sidebar__task-remaining">
+          <span class="task-remaining__number">0</span>
+          <span class="task-remaining__title">Task Remaining</span>
+        </div>
+      </aside>
+      <section class="layout__content">
+        <div class="layout__content-header">
+          <h2 class="layout__content-title">All Tasks</h2>
+          <div class="layout__content-actions">
+            <div class="search">
+              <i class="search__icon fas fa-search"></i>
+              <input
+                class="search__input"
+                id="search__input"
+                type="search"
+                placeholder="Search tasks..."
+              />
+            </div>
+            <button class="btn btn__confirm btn__new-task">
+              <i class="btn__icon fas fa-plus"></i>
+              <span class="btn__text">New Task</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="layout__content-task hidden">
+          <input
+            class="layout__content-task-inp"
+            type="text"
+            placeholder="What needs to be done?"
+          />
+          <div class="layout__content-task-btn">
+            <button class="btn btn__cancel btn__cancel-task">Cancel</button>
+            <button class="btn btn__confirm btn__add-task">Add Task</button>
+          </div>
+        </div>
+
+        <div class="no-task">
+          <i class="no-task__icon fas fa-clipboard-list"></i>
+          <span class="no-task__title">No tasks found</span>
+        </div>
+
+        <div class="task-grid"></div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
