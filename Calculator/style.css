@@ -1,0 +1,108 @@
+:root {
+  --color-black: #000;
+  --color-white: #fff;
+
+  --color-blue-100: #f9f9ff;
+
+  --color-gray-100: #eff3f6;
+  --color-gray-200: #eef2f5;
+  --color-gray-300: #edf0ef;
+  --color-gray-600: #3d4248;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* background-color: var(--color-blue-100); */
+  background-color: #efefef;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.darkmode {
+  --color-white: #3c444c;
+  --color-gray-200: #535861;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.layout {
+  height: 45rem;
+  background-color: var(--color-white);
+  color: var(--color-gray-600);
+  border-radius: 2rem;
+  display: grid;
+  grid-template-rows: 1fr 2fr 4fr;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+.layout__standard-width {
+  width: 24rem;
+}
+.layout__scientific-width {
+  width: 40rem;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.header__calc-mode {
+  display: flex;
+  align-items: start;
+  gap: 1.5rem;
+}
+.header__calc-mode .header__btn {
+  color: var(--color-gray-600);
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.header__theme-switcher .theme__select {
+  padding: 1rem;
+}
+
+.display .display__inp {
+  height: 100%;
+}
+
+.buttons {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1rem;
+}
+.buttons__standard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.buttons__scientific {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.btn {
+  color: var(--color-gray-600);
+  background-color: transparent;
+  border: 1px solid var(--color-gray-300);
+  border-radius: 0.2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.btn.operator {
+  background-color: var(--color-gray-100);
+}
+.btn.equal {
+  grid-column: span 2;
+}
