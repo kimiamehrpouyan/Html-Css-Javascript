@@ -3,7 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Calculator</title>
   </head>
-  <body></body>
+  <body>
+    <div class="layout layout__scientific-width">
+      <div class="header">
+        <div class="header__calc-mode">
+          <button class="header__btn standard">Standard</button>
+          <button class="header__btn scientific">Scientific</button>
+        </div>
+        <div class="header__theme-switcher">
+          <select id="theme__select">
+            <option value="dark">🌙 Dark</option>
+            <option value="light">🌞 Light</option>
+            <option value="blue">🔵 Blue</option>
+            <option value="green">🟢 Green</option>
+            <option value="pink">🌸 Pink</option>
+          </select>
+        </div>
+      </div>
+      <div class="display">
+        <input class="display__inp" type="text" />
+      </div>
+      <div class="buttons">
+        <div class="buttons__standard">
+          <button class="btn">7</button>
+          <button class="btn">8</button>
+          <button class="btn">9</button>
+          <button class="btn operator">/</button>
+
+          <button class="btn">4</button>
+          <button class="btn">5</button>
+          <button class="btn">6</button>
+          <button class="btn operator">*</button>
+
+          <button class="btn">1</button>
+          <button class="btn">2</button>
+          <button class="btn">3</button>
+          <button class="btn operator">-</button>
+
+          <button class="btn operator">%</button>
+          <button class="btn">0</button>
+          <button class="btn operator">.</button>
+          <button class="btn operator">+</button>
+
+          <button class="btn">C</button>
+          <button class="btn">CE</button>
+          <button class="btn equal">=</button>
+        </div>
+        <div class="buttons__scientific">
+          <button class="btn operator">inv</button>
+          <button class="btn operator">sin</button>
+          <button class="btn operator">ln</button>
+
+          <button class="btn operator">π</button>
+          <button class="btn operator">cos</button>
+          <button class="btn operator">log</button>
+
+          <button class="btn operator">e</button>
+          <button class="btn operator">tan</button>
+          <button class="btn operator">√</button>
+
+          <button class="btn operator">ans</button>
+          <button class="btn operator">EXP</button>
+          <button class="btn operator">xʸ</button>
+
+          <button class="btn operator">(</button>
+          <button class="btn operator">)</button>
+          <button class="btn operator">x²</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
