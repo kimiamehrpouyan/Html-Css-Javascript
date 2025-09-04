@@ -3,29 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Calculator</title>
   </head>
   <body>
-    <div class="layout layout__scientific-width">
+    <div class="layout layout__standard-width">
       <div class="header">
         <div class="header__calc-mode">
-          <button class="header__btn standard">Standard</button>
-          <button class="header__btn scientific">Scientific</button>
+          <button class="header__btn standard__mode header__cacl-active-mode">
+            Standard
+          </button>
+          <button class="header__btn scientific__mode">Scientific</button>
         </div>
         <div class="header__theme-switcher">
-          <select id="theme__select">
-            <option value="dark">🌙 Dark</option>
-            <option value="light">🌞 Light</option>
-            <option value="blue">🔵 Blue</option>
-            <option value="green">🟢 Green</option>
-            <option value="pink">🌸 Pink</option>
-          </select>
+          <div class="theme__selected"><i class="fas fa-sun"></i> Light</div>
+          <ul class="theme__options hidden">
+            <li data-value="light" id="light">Light</li>
+            <li data-value="dark" id="dark">Dark</li>
+            <li data-value="blue" id="blue">Blue</li>
+          </ul>
         </div>
       </div>
       <div class="display">
-        <input class="display__inp" type="text" />
+        <span class="display__expression">15 * 15</span>
+        <span class="display__result">225</span>
       </div>
+
       <div class="buttons">
         <div class="buttons__standard">
           <button class="btn">7</button>
@@ -52,7 +59,7 @@
           <button class="btn">CE</button>
           <button class="btn equal">=</button>
         </div>
-        <div class="buttons__scientific">
+        <div class="buttons__scientific hidden">
           <button class="btn operator">inv</button>
           <button class="btn operator">sin</button>
           <button class="btn operator">ln</button>
