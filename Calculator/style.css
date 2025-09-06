@@ -30,7 +30,15 @@ body {
 
 .darkmode {
   --color-white: #3c444c;
+  --color-gray-100: #535861;
   --color-gray-200: #535861;
+  --color-gray-300: #545c65;
+  --color-gray-600: #eff3f6;
+}
+.purplemode {
+  --color-white: #898ac4;
+  --color-gray-100: #a2aadb;
+  --color-gray-300: #a2aadb;
 }
 
 .hidden {
@@ -46,6 +54,7 @@ body {
   grid-template-rows: 1fr 2fr 4fr;
   gap: 1rem;
   padding: 1.5rem;
+  transition: all 0.2s;
 }
 .layout__standard-width {
   width: 24rem;
@@ -99,6 +108,7 @@ body {
   text-align: center;
   list-style: none;
   user-select: none;
+  cursor: pointer;
 }
 .theme__options li[data-value="light"] {
   color: black;
@@ -108,9 +118,9 @@ body {
   color: white;
   background-color: #2d3033;
 }
-.theme__options li[data-value="blue"] {
-  color: black;
-  background-color: lightblue;
+.theme__options li[data-value="purple"] {
+  color: white;
+  background-color: purple;
 }
 
 .display {
@@ -166,9 +176,17 @@ body {
 }
 .btn.operator {
   background-color: var(--color-gray-100);
+  transition: all 0.3s;
+}
+.btn.operator:active {
+  background-color: #c4cace;
 }
 .btn.equal {
   grid-column: span 2;
   background-color: var(--color-blue-500);
-  color: var(--color-white);
+  color: #fff;
+  transition: all 0.3s;
+}
+.btn.equal:active {
+  background-color: #3d6baf;
 }

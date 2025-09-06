@@ -2,18 +2,22 @@ const scientificModeBtn = document.querySelector(".scientific__mode");
 const standardModeBtn = document.querySelector(".standard__mode");
 const darkModeBtn = document.querySelector("#dark");
 const lightModeBtn = document.querySelector("#light");
-const blueModeBtn = document.querySelector("#blue");
+const purpleModeBtn = document.querySelector("#purple");
 
 const themeSelected = document.querySelector(".theme__selected");
 const themeOptions = document.querySelector(".theme__options");
-const displayExpression = document.querySelector(".display__expression");
-const displayResult = document.querySelector(".display__result");
+let displayExpression = document.querySelector(".display__expression");
+let displayResult = document.querySelector(".display__result");
 const layout = document.querySelector(".layout");
 const buttons = document.querySelector(".buttons");
+const allButtons = document.querySelectorAll(".btn");
 
 const scientificBtns = document.querySelector(".buttons__scientific");
 
-const getTheme = localStorage.getItem("theme");
+let getTheme = localStorage.getItem("theme");
+let result = "";
+let expression = "";
+const operationChar = ["+", "-", "*", "/"];
 
 scientificModeBtn.addEventListener("click", () => {
   scientificBtns.classList.remove("hidden");
@@ -38,20 +42,61 @@ themeSelected.addEventListener("click", () => {
 
 darkModeBtn.addEventListener("click", () => {
   localStorage.setItem("theme", "dark");
+  getTheme = localStorage.getItem("theme");
+  if (getTheme === "dark") EnableDarkMode();
 });
 lightModeBtn.addEventListener("click", () => {
   localStorage.setItem("theme", "light");
+  getTheme = localStorage.getItem("theme");
+  if (getTheme === "light") EnableLightMode();
 });
-blueModeBtn.addEventListener("click", () => {
-  localStorage.setItem("theme", "blue");
+purpleModeBtn.addEventListener("click", () => {
+  localStorage.setItem("theme", "purple");
+  getTheme = localStorage.getItem("theme");
+  if (getTheme === "purple") EnablePurpleMode();
 });
 
 function EnableDarkMode() {
-  localStorage.getItem("theme");
+  document.body.classList.remove("purplemode");
+  document.body.classList.add("darkmode");
 }
 function EnableLightMode() {
-  localStorage.getItem("theme");
+  document.body.classList.remove("purplemode");
+  document.body.classList.remove("darkmode");
 }
-function EnableBlueMode() {
-  localStorage.getItem("theme");
+function EnablePurpleMode() {
+  document.body.classList.remove("darkmode");
+  document.body.classList.add("purplemode");
 }
+
+function Calculate(btnValu) {
+  if (btnValu === "=") {
+    expression = result;
+    result = eval(result);
+  }
+
+  if (btnValu !== "=") {
+    result += btnValu;
+  }
+
+  if (operationChar.includes(btnValu)) {
+    expression = result;
+  }
+
+  if (btnValu === "C") {
+    expression = "";
+    result = "";
+  }
+  if (btnValu === "CE") {
+    result = "";
+  }
+
+  displayResult.textContent = result;
+  displayExpression.textContent = expression;
+}
+
+allButtons.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    Calculate(e.target.dataset.value);
+  });
+});
