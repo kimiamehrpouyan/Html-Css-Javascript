@@ -71,24 +71,14 @@ function EnablePurpleMode() {
 
 function Calculate(btnValu) {
   if (btnValu === "=") {
-    expression = result;
-    result = eval(result);
-  }
-
-  if (btnValu !== "=") {
-    result += btnValu;
-  }
-
-  if (operationChar.includes(btnValu)) {
-    expression = result;
-  }
-
-  if (btnValu === "C") {
+    result = eval(expression);
+  } else if (btnValu === "C") {
     expression = "";
     result = "";
-  }
-  if (btnValu === "CE") {
-    result = "";
+  } else if (btnValu === "CE") {
+    expression = expression.slice(0, -1);
+  } else {
+    expression += btnValu;
   }
 
   displayResult.textContent = result;

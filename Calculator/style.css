@@ -20,7 +20,6 @@
 }
 
 body {
-  /* background-color: var(--color-blue-100); */
   background-color: #efefef;
   height: 100vh;
   display: flex;
@@ -39,6 +38,8 @@ body {
   --color-white: #898ac4;
   --color-gray-100: #a2aadb;
   --color-gray-300: #a2aadb;
+  --color-blue-500: #77aaf7;
+  --color-gray-600: #32363a;
 }
 
 .hidden {
@@ -68,6 +69,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
 .header__calc-mode {
   display: flex;
   align-items: start;
@@ -89,9 +91,11 @@ body {
   font-family: "Poppins", sans-serif;
   position: relative;
 }
+
 .theme__selected {
   cursor: pointer;
 }
+
 .theme__options {
   background-color: var(--color-white);
   border: 1px solid var(--color-gray-300);
@@ -120,7 +124,7 @@ body {
 }
 .theme__options li[data-value="purple"] {
   color: white;
-  background-color: purple;
+  background-color: rgb(112, 43, 223);
 }
 
 .display {
@@ -151,6 +155,7 @@ body {
   grid-template-columns: 1.4fr 1fr;
   gap: 1rem;
 }
+
 .buttons__standard {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -165,6 +170,7 @@ body {
   font-size: 1.2rem;
   font-weight: 400;
 }
+
 .btn {
   font-family: "Poppins", sans-serif;
   color: var(--color-gray-600);
@@ -183,7 +189,7 @@ body {
 }
 .btn.equal {
   grid-column: span 2;
-  background-color: var(--color-blue-500);
+  background-color: #4389f1;
   color: #fff;
   transition: all 0.3s;
 }
